@@ -1,8 +1,12 @@
 import React from "react";
+import EventScreen from "./EventScreen";
 
 function EventsListScreen() {
     return (
-        <h1>placeholder</h1>
+        <div>
+        <EventScreen/>
+        <EventScreen/>
+        </div>
     );
 
 }

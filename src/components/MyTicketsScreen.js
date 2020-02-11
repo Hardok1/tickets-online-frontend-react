@@ -1,8 +1,12 @@
 import React from "react";
+import MyTicketItem from "./MyTicketItem";
 
 function MyTicketsScreen() {
     return (
-        <h1>placeholder</h1>
+        <div>
+            <MyTicketItem/>
+            <MyTicketItem/>
+        </div>
     );
 
 }
