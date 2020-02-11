@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios';
 
 function RegisterScreen() {
     return (
@@ -16,10 +17,28 @@ function RegisterScreen() {
                     <label htmlFor="inputPassword">Haslo</label>
                     <input type="password" className="form-control" id="inputPassword" placeholder="haslo"/>
                 </div>
-                <button type="submit" className="btn btn-primary">Wyslij</button>
+                <button type="button" className="btn btn-primary" onClick={signUp}>Wyslij</button>
             </fieldset>
         </form>
     );
+
+}
+
+function signUp(){
+    let login = document.getElementById("inputLogin").value;
+    let email = document.getElementById("inputEmail").value;
+    let password = document.getElementById("inputPassword").value;
+    axios.post('localhost:8080/account/signup', {
+        login: login,
+        password: password,
+        email: email
+    }).then(function (response) {
+        if (response.status === 201) {
+            alert("Konto utworzone!")
+        } else {
+            alert("Wystąpił błąd");
+        }
+    })
 
 }
 
