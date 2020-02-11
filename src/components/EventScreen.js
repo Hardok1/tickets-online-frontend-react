@@ -14,7 +14,7 @@ function EventScreen() {
                     <span id="eventTicketsLeft">Ile zostalo</span> / <span id="eventTicketLimit"> Jaki limit</span></p>
                 <button type="button" className="btn btn-primary" onClick={buyTicket}>Kup bilet</button>
                 <button type="button" className="btn btn-primary" onClick={editEvent}>Edytuj wydarzenie</button>
-                <p id="eventId" style={hideParagraphStyle}>Przechowuje id eventu</p>
+                <p id="eventId" style={hideElementStyle}>Przechowuje id eventu</p>
             </div>
         </div>
     );
@@ -32,7 +32,7 @@ function editEvent() {
 
 
 
-const hideParagraphStyle = {
+const hideElementStyle = {
     display:"none"
 };
 
