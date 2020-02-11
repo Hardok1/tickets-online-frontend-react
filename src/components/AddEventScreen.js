@@ -61,8 +61,7 @@ function addEvent() {
         ticketLimit: ticketLimit
     }).then(function (response) {
         if (response.status === 200) {
-            localStorage.setItem("token", response.accessToken);
-            alert("Zalogowano!")
+            alert("Dodano wydarzenie!")
         } else {
             alert("Wystąpił błąd!");
         }
