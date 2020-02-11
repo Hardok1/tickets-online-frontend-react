@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 
+//Tylko admin może dodawać event
 function AddEventScreen() {
     return (
         <form>
@@ -59,16 +60,17 @@ function addEvent() {
         active: active,
         ticketPrice: ticketPrice,
         ticketLimit: ticketLimit
-    }).then(function (response) {
-        if (response.status === 201) {
-            alert("Dodano wydarzenie!")
-        } else {
+    }, {headers: {'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem("token"))}})
+        .then(function (response) {
+            if (response.status === 201) {
+                alert("Dodano wydarzenie!")
+            } else {
+                alert("Wystąpił błąd!");
+            }
+        })
+        .catch(function (error) {
             alert("Wystąpił błąd!");
-        }
-    }).catch(function (error) {
-        alert("Wystąpił błąd!");
-    });
-
+        });
 }
 
 export default AddEventScreen;
