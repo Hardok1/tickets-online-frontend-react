@@ -49,8 +49,8 @@ function addEvent() {
     let date = document.getElementById("inputDate").value;
     let city = document.getElementById("inputCity").value;
     let active = true;
-    let ticketPrice = parseFloat(document.getElementById("inputTicketPrice").value);
-    let ticketLimit = parseFloat(document.getElementById("inputTicketLimit").value);
+    let ticketPrice = parseInt(document.getElementById("inputTicketPrice").value);
+    let ticketLimit = parseInt(document.getElementById("inputTicketLimit").value);
     axios.post('localhost:8080/login', {
         name: name,
         description: description,
