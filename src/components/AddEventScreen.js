@@ -60,7 +60,7 @@ function addEvent() {
         ticketPrice: ticketPrice,
         ticketLimit: ticketLimit
     }).then(function (response) {
-        if (response.status === 200) {
+        if (response.status === 201) {
             alert("Dodano wydarzenie!")
         } else {
             alert("Wystąpił błąd!");
