@@ -4,6 +4,7 @@ import RegisterScreen from "./RegisterScreen";
 import LoginScreen from "./LoginScreen";
 import MyTicketsScreen from "./MyTicketsScreen";
 import EventsListScreen from "./EventsListScreen";
+import AddEventScreen from "./AddEventScreen";
 
 function Navbar() {
     return (
@@ -27,6 +28,10 @@ function Navbar() {
                             <li className="nav-item active">
                                 <Link className="nav-link" to="/register">Rejestracja</Link>
                             </li>
+                            <li className="nav-item active">
+                                <Link className="nav-link" to="/addEvent">Dodaj Wydarzenie</Link>
+                            </li>
+
                         </ul>
                     </div>
                 </nav>
@@ -43,6 +48,9 @@ function Navbar() {
                     </Route>
                     <Route path="/tickets">
                         <MyTicketsScreen/>
+                    </Route>
+                    <Route path="/addEvent">
+                        <AddEventScreen/>
                     </Route>
 
                 </Switch>

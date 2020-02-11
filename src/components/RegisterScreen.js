@@ -24,7 +24,7 @@ function RegisterScreen() {
 
 }
 
-function signUp(){
+function signUp() {
     let login = document.getElementById("inputLogin").value;
     let email = document.getElementById("inputEmail").value;
     let password = document.getElementById("inputPassword").value;
@@ -36,9 +36,11 @@ function signUp(){
         if (response.status === 201) {
             alert("Konto utworzone!")
         } else {
-            alert("Wystąpił błąd");
+            alert("Wystąpił błąd!");
         }
-    })
+    }).catch(function (error) {
+        alert("Wystąpił błąd!");
+    });
 
 }
 
