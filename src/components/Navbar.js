@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import RegisterScreen from "./RegisterScreen";
+import LoginScreen from "./LoginScreen";
 
 function Navbar() {
     return (
@@ -8,8 +9,12 @@ function Navbar() {
             <div>
                 <Switch>
                     <Route path="/register">
-                        <RegisterScreen/>
+                        <RegisterScreen />
                     </Route>
+                    <Route path="login">
+                    <LoginScreen />
+                </Route>
+
                 </Switch>
             </div>
         </Router>
