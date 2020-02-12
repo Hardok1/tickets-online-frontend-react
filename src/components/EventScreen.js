@@ -11,8 +11,9 @@ function EventScreen({ active, city, date, description, id, imageUrl, name, tick
                 <p className="card-text" id="eventCity">Miasto: {city}</p>
                 <p className="card-text" id="eventTicketPrice">Cena biletu: <span>{ticketPrice}</span></p>
                 <p className="card-text">Ilosc dostepnych biletow:
-                    <span id="eventTicketsLeft"> {ticketsLeft}</span> / <span id="eventTicketLimit"> {ticketLimit}</span></p>
-                <button type="button" className="btn btn-primary" onClick={buyTicket}>Kup bilet</button>
+                    <span id="eventTicketsLeft"> {ticketsLeft}</span> / <span id="eventTicketLimit"> {ticketLimit}</span>
+                </p>
+                <button type="button" className="btn btn-primary" onClick={buyTicket(id)} >Kup bilet</button>
                 <button type="button" className="btn btn-primary" onClick={editEvent}>Edytuj wydarzenie</button>
                 <p id="eventId" style={hideElementStyle}>{id}</p>
             </div>
@@ -20,8 +21,8 @@ function EventScreen({ active, city, date, description, id, imageUrl, name, tick
     );
 }
 
-function buyTicket() {
-
+function buyTicket(id) {
+    console.log(id);
 }
 
 //funkcja dla admina, powinno przenosic do innego ekranu ktorego jeszcze nie ma
@@ -33,7 +34,7 @@ function editEvent() {
 
 
 const hideElementStyle = {
-    display:"none"
+    display: "none"
 };
 
 const divStyle = {
