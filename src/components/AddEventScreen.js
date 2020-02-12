@@ -43,11 +43,7 @@ function AddEventScreen() {
 
 //name, description, imageUrl, date, city, active, ticketPrice, ticketLimit
 function addEvent() {
-    console.log("samo getItem");
-    console.log(localStorage.getItem("token"));
-    console.log("z parse");
-    console.log(JSON.parse(localStorage.getItem("token")));
-    let name = document.getElementById("inputLogin").value;
+    let name = document.getElementById("inputName").value;
     let description = document.getElementById("inputDescription").value;
     let imageUrl = document.getElementById("inputImageUrl").value;
     let date = document.getElementById("inputDate").value;
@@ -64,7 +60,7 @@ function addEvent() {
         active: active,
         ticketPrice: ticketPrice,
         ticketLimit: ticketLimit
-    }, {headers: {'Authorization': 'Bearer ' + JSON.parse(localStorage.getItem("token"))}})
+    }, {headers: {'Authorization': 'Bearer ' + localStorage.getItem("token")}})
         .then(function (response) {
             if (response.status === 201) {
                 alert("Dodano wydarzenie!")

@@ -27,8 +27,7 @@ function signIn() {
         password: password
     }).then(function (response) {
         if (response.status === 200) {
-            localStorage.setItem("token", response.accessToken);
-            console.log("Token:");
+            localStorage.setItem("token", response.headers.authorization);
             console.log(localStorage.getItem("token"));
             alert("Zalogowano!")
         } else {
