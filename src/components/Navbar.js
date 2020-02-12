@@ -52,6 +52,9 @@ function Navbar() {
                     <Route path="/addEvent">
                         <AddEventScreen/>
                     </Route>
+                    <Route path={"/"}>
+                        <EventsListScreen/>
+                    </Route>
 
                 </Switch>
             </div>

@@ -28,7 +28,7 @@ function signUp() {
     let login = document.getElementById("inputLogin").value;
     let email = document.getElementById("inputEmail").value;
     let password = document.getElementById("inputPassword").value;
-    axios.post('localhost:8080/account/signup', {
+    axios.post('http://localhost:8080/account/signup', {
         login: login,
         password: password,
         email: email

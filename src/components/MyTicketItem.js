@@ -1,13 +1,11 @@
 import React from "react";
 
-
-function MyTicketItem() {
+function MyTicketItem({eventName, eventId}) {
     return (
         <div className="card border-primary mb-3" style={divStyle}>
-            <div className="card-header" id="eventName">Nazwa</div>
+            <div className="card-header" id="eventName">Nazwa: {eventName}</div>
             <div className="card-body">
-                <button type="button" className="btn btn-primary" onClick={showEvent}>Pokaż szczegóły wydarzenia</button>
-                <p id="eventId" style={hideElementStyle}>Przechowuje id eventu</p>
+                <button type="button" className="btn btn-primary" onClick={() => showEvent(eventId)}>Pokaż szczegóły wydarzenia</button>
             </div>
         </div>
     );
@@ -15,14 +13,9 @@ function MyTicketItem() {
 }
 
 //Przeniesie do widoku tylko jednego wydarzenia z id biletu
-function showEvent() {
-
+function showEvent(id) {
+    console.log(id);
 }
-
-const hideElementStyle = {
-    display:"none"
-};
-
 
 const divStyle = {
     left: "8%",

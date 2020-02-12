@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 function EventScreen({ active, city, date, description, id, imageUrl, name, ticketLimit, ticketPrice, ticketsLeft }) {
     return (
@@ -13,9 +14,8 @@ function EventScreen({ active, city, date, description, id, imageUrl, name, tick
                 <p className="card-text">Ilosc dostepnych biletow:
                     <span id="eventTicketsLeft"> {ticketsLeft}</span> / <span id="eventTicketLimit"> {ticketLimit}</span>
                 </p>
-                <button type="button" className="btn btn-primary" onClick={buyTicket(id)} >Kup bilet</button>
-                <button type="button" className="btn btn-primary" onClick={editEvent}>Edytuj wydarzenie</button>
-                <p id="eventId" style={hideElementStyle}>{id}</p>
+                <button type="button" className="btn btn-primary" onClick={() => buyTicket(id)}>Kup bilet</button>
+                <button type="button" className="btn btn-primary" onClick={() => editEvent(id)}>Edytuj wydarzenie</button>
             </div>
         </div>
     );
@@ -23,19 +23,24 @@ function EventScreen({ active, city, date, description, id, imageUrl, name, tick
 
 function buyTicket(id) {
     console.log(id);
+    axios.post('http://localhost:8080/event/buyTicket/' + id, {},
+        {headers: {'Authorization': 'Bearer ' + localStorage.getItem("token")}})
+        .then(function (response) {
+            if (response.status === 201) {
+                alert("Bilet pomyślnie zakupiony!")
+            } else {
+                alert("Wystąpił błąd!");
+            }
+        })
+        .catch(function (error) {
+            alert("Wystąpił błąd!");
+        });
 }
 
 //funkcja dla admina, powinno przenosic do innego ekranu ktorego jeszcze nie ma
-function editEvent() {
-
+function editEvent(id) {
+    console.log(id);
 }
-
-
-
-
-const hideElementStyle = {
-    display: "none"
-};
 
 const divStyle = {
     left: "8%",
