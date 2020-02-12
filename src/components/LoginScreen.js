@@ -22,12 +22,14 @@ function LoginScreen() {
 function signIn() {
     let login = document.getElementById("inputLogin").value;
     let password = document.getElementById("inputPassword").value;
-    axios.post('localhost:8080/login', {
+    axios.post('http://localhost:8080/login', {
         login: login,
         password: password
     }).then(function (response) {
         if (response.status === 200) {
             localStorage.setItem("token", response.accessToken);
+            console.log("Token:");
+            console.log(localStorage.getItem("token"));
             alert("Zalogowano!")
         } else {
             alert("Wystąpił błąd!");
