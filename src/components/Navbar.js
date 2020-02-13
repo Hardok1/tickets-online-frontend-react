@@ -5,6 +5,8 @@ import LoginScreen from "./LoginScreen";
 import MyTicketsScreen from "./MyTicketsScreen";
 import EventsListScreen from "./EventsListScreen";
 import AddEventScreen from "./AddEventScreen";
+import EditEventScreen from './EditEventScreen';
+import EventScreen from './EventScreen';
 
 function Navbar() {
     return (
@@ -51,6 +53,12 @@ function Navbar() {
                     </Route>
                     <Route path="/addEvent">
                         <AddEventScreen/>
+                    </Route>
+                    <Route path="/editEvent/:id">
+                        <EditEventScreen/>
+                    </Route>
+                    <Route path="/event/:id">
+                        <EventScreen/>
                     </Route>
                     <Route path={"/"}>
                         <EventsListScreen/>
